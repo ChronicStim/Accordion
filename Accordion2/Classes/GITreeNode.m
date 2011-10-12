@@ -241,6 +241,12 @@ NSString *space(int x){
         else if ([extension isEqualToString:@"sqlite"]) {
             iconImage = [UIImage imageNamed:@"database_key"];
         }        
+        else if ([extension isEqualToString:@"zip"]) {
+            iconImage = [UIImage imageNamed:@"file_extension_zip"];
+        }
+        else {
+            iconImage = [UIImage imageNamed:@"page_white"];
+        }
     }
     return iconImage;
 }
