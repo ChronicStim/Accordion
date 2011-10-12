@@ -10,10 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class GIAccordion;
+@class CPTGIAccordion;
 
 @interface GIAccordionViewController : UITableViewController {
-	GIAccordion *accordion;
+	CPTGIAccordion *accordion;
 }
 
 - (IBAction)sort:(id)sender;

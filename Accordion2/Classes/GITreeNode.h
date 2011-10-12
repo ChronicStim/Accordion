@@ -85,4 +85,6 @@
 /// children are unloaded here if needed
 - (void) flushCache;
 
+-(UIImage *)iconForTreeNode;
+
 @end

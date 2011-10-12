@@ -19,4 +19,5 @@
 @property (nonatomic, retain) NSMutableArray *selectedNodes;
 @property (nonatomic) BOOL isInPseudoEditMode;
 
+
 @end

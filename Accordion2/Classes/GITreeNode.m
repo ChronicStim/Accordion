@@ -219,4 +219,31 @@ NSString *space(int x){
 	
 	return [NSString stringWithFormat:@"%@%@ %@", space(self.depth),self.isDirectory?@"D":@"F", self.filename];
 }
+
+
+
+-(UIImage *)iconForTreeNode
+{
+    UIImage *iconImage;
+    if ([self isDirectory]) {
+        iconImage = [UIImage imageNamed:@"folder"];
+    } else {
+        NSString *extension = [self fileExtension];
+        if ([extension isEqualToString:@"html"]) {
+            iconImage = [UIImage imageNamed:@"file_extension_html"];
+        }
+        else if ([extension isEqualToString:@"csv"]) {
+            iconImage = [UIImage imageNamed:@"file_extension_csv"];
+        }
+        else if ([extension isEqualToString:@"png"]) {
+            iconImage = [UIImage imageNamed:@"file_extension_png"];
+        }
+        else if ([extension isEqualToString:@"sqlite"]) {
+            iconImage = [UIImage imageNamed:@"database_key"];
+        }        
+    }
+    return iconImage;
+}
+
+
 @end

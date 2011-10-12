@@ -49,8 +49,10 @@
 		
 		self.textLabel.textColor = [UIColor blackColor];
 		self.textLabel.backgroundColor = [UIColor clearColor];
+        self.textLabel.adjustsFontSizeToFitWidth = YES;
 		self.detailTextLabel.textColor= [UIColor grayColor];
 		self.detailTextLabel.backgroundColor = [UIColor clearColor];
+        self.detailTextLabel.adjustsFontSizeToFitWidth = YES;
 		
 		//for Debug
 		//dirAccessoryLayer.borderColor = [UIColor blackColor].CGColor;
@@ -139,7 +141,7 @@
 	float pseudoEditIndentation = inPseudoEditMode?23:0;
 	indentation += pseudoEditIndentation;
 	float cellHeight = self.frame.size.height;
-	static int iconSize = 44;  
+	static int iconSize = 32;  
 	
 	if(inPseudoEditMode){
 		[self.selectedIconLayer setFrame:CGRectMake(0, 20, 23, 23)];

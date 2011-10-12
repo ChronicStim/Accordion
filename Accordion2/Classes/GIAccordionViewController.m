@@ -10,6 +10,7 @@
 
 #import "GIAccordionViewController.h"
 #import "GIAccordion.h"
+#import "CPTGIAccordion.h"
 
 @implementation GIAccordionViewController
 
@@ -26,7 +27,7 @@
 		//Documents
 		path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	}
-	accordion = [[GIAccordion alloc] initWithPath:path];
+	accordion = [[CPTGIAccordion alloc] initWithPath:path];
 
 	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
 	self.title = @"Accordion2";
@@ -51,7 +52,8 @@
 - (void) loadView{
 	[super loadView];
 	self.navigationController.navigationBarHidden = NO;
-	self.navigationController.toolbarHidden = NO;
+//	self.navigationController.toolbarHidden = NO;
+    
 }
 
 - (void) viewDidLoad {
@@ -60,12 +62,12 @@
 	//not implemented yet
 	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleBordered target:self action:@selector(sort:)];
-	NSArray *items = [[NSArray alloc] initWithObjects:sortButton, nil];
-	self.navigationController.toolbarItems = items;
-	[items release];
+//	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleBordered target:self action:@selector(sort:)];
+//	NSArray *items = [[NSArray alloc] initWithObjects:sortButton, nil];
+//	self.navigationController.toolbarItems = items;
+//	[items release];
 
-	self.tableView.rowHeight = 66;
+	self.tableView.rowHeight = 44;
 	self.tableView.delegate = accordion;
 	self.tableView.dataSource = accordion;
 }

@@ -52,7 +52,7 @@
 		cell = [[[GIAccordionViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		//cell.indentationWidth = cell.frame.size.height;
-		cell.indentationWidth = 40.0;//44: icon image size
+		cell.indentationWidth = 20.0;//44: icon image size
 		
 		UILongPressGestureRecognizer *r = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(cellWasLongPressed:)];
 		[cell addGestureRecognizer:r];
@@ -60,8 +60,9 @@
 	}
 	
 	GITreeNode *node = (GITreeNode *)[self.nodes objectAtIndex:indexPath.row];
-	[cell setTitle:[node.filename stringByDeletingPathExtension]];
-	[cell setIcon:[UIImage imageNamed:(node.isDirectory)?@"directory44.png":@"file44.png"] 
+//	[cell setTitle:[node.filename stringByDeletingPathExtension]];
+    [cell setTitle:node.filename];
+	[cell setIcon:[node iconForTreeNode] 
 	  isDirectory:node.isDirectory];
 	cell.detailTextLabel.text = [[node modificationDate] description];//creationDateFormated];
 	cell.indentationLevel = node.depth;
@@ -90,7 +91,6 @@
 - (void)cellWasLongPressed:(id)sender{
 	NSLog(@"%@: Not implemented", NSStringFromSelector(_cmd));
 }
-
 
 
 @end
