@@ -251,5 +251,34 @@ NSString *space(int x){
     return iconImage;
 }
 
+-(NSString *)mimeTypeForTreeNode
+{
+    NSString *mimeTypeCode;
+    if ([self isDirectory]) {
+        mimeTypeCode = [NSString stringWithString:@""];
+    } else {
+        NSString *extension = [self fileExtension];
+        if ([extension isEqualToString:@"html"]) {
+            mimeTypeCode = [NSString stringWithString:@"text/html"];
+        }
+        else if ([extension isEqualToString:@"csv"]) {
+            mimeTypeCode = [NSString stringWithString:@"text/csv"];
+        }
+        else if ([extension isEqualToString:@"png"]) {
+            mimeTypeCode = [NSString stringWithString:@"image/png"];
+        }
+        else if ([extension isEqualToString:@"sqlite"]) {
+            mimeTypeCode = [NSString stringWithString:@"application/sqlite"];
+        }        
+        else if ([extension isEqualToString:@"zip"]) {
+            mimeTypeCode = [NSString stringWithString:@"application/zip"];
+        }
+        else {
+            mimeTypeCode = [NSString stringWithString:@""];
+        }
+    }
+    return mimeTypeCode;
+
+}
 
 @end

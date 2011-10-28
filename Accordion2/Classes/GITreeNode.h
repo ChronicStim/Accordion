@@ -86,5 +86,6 @@
 - (void) flushCache;
 
 -(UIImage *)iconForTreeNode;
+-(NSString *)mimeTypeForTreeNode;
 
 @end
