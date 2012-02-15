@@ -22,8 +22,8 @@
 
 }
 
-@property (nonatomic, retain) NSMutableArray *sortDescriptors;
-@property (nonatomic, retain, readonly) NSArray *nodes; //hides mutability
+@property (nonatomic, strong) NSMutableArray *sortDescriptors;
+@property (nonatomic, strong, readonly) NSArray *nodes; //hides mutability
 
 - (id) initWithPath:(NSString *)baseDirectoryPath;
 

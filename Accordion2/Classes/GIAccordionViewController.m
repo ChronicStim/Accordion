@@ -91,10 +91,6 @@
 }
 
 
-- (void)dealloc {
-	[accordion release];
-	[super dealloc];
-}
 
 - (IBAction)sort:(id)sender{
 	NSLog(@"%@ : Not Implemented", NSStringFromSelector(_cmd));

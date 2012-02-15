@@ -32,10 +32,6 @@
 	}
 	return self;
 }
-- (void) dealloc{
-	[selectedNodes release];
-	[super dealloc];
-}
 - (void)setIsInPseudoEditMode:(BOOL)flag{
 	isInPseudoEditMode = flag;
 	if (!flag) {
@@ -49,14 +45,13 @@
 	static NSString *CellIdentifier = @"MyCellIdentifier";
 	GIAccordionViewCell *cell = (GIAccordionViewCell *)[aTableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[GIAccordionViewCell alloc] initWithReuseIdentifier:CellIdentifier] autorelease];
+		cell = [[GIAccordionViewCell alloc] initWithReuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		//cell.indentationWidth = cell.frame.size.height;
 		cell.indentationWidth = 20.0;//44: icon image size
 		
 		UILongPressGestureRecognizer *r = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(cellWasLongPressed:)];
 		[cell addGestureRecognizer:r];
-		[r release];
 	}
 	
 	GITreeNode *node = (GITreeNode *)[self.nodes objectAtIndex:indexPath.row];

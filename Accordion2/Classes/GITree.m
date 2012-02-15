@@ -151,8 +151,8 @@
 	// Dequeue or create a cell of the appropriate type.
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-									   reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+									   reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 
@@ -226,7 +226,6 @@
 			}
 			[aTableView deleteRowsAtIndexPaths:indexPaths 
 								  withRowAnimation:UITableViewRowAnimationLeft];
-			[indexPaths release];
 			
 		}else {
 			
@@ -237,7 +236,6 @@
 			}
 			[aTableView insertRowsAtIndexPaths:indexPaths 
 								  withRowAnimation:UITableViewRowAnimationLeft];
-			[indexPaths release];
 		}
 		
 	}

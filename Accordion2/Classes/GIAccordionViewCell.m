@@ -20,8 +20,8 @@
 	
 	BOOL inPseudoEditMode;
 }
-@property (nonatomic, retain) CALayer *dirAccessoryLayer;
-@property (nonatomic, retain) CALayer *selectedIconLayer;
+@property (nonatomic, strong) CALayer *dirAccessoryLayer;
+@property (nonatomic, strong) CALayer *selectedIconLayer;
 @end
 
 @implementation GIAccordionViewCell
@@ -31,7 +31,7 @@
 
 - (CALayer *) selectedIconLayer{
 	if(!selectedIconLayer){
-		selectedIconLayer = [[CALayer layer] retain];
+		selectedIconLayer = [CALayer layer];
 		[self.layer addSublayer:selectedIconLayer];
 	}
 	return selectedIconLayer;
@@ -43,7 +43,7 @@
 - (id) initWithReuseIdentifier:(NSString *)identifier{
 	if ((self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier])) {
 		
-		dirAccessoryLayer = [[CALayer layer] retain];
+		dirAccessoryLayer = [CALayer layer];
 		[self.layer addSublayer:dirAccessoryLayer];
 		
 		
@@ -165,11 +165,6 @@
 	
 }
 
-- (void) dealloc{
-	[dirAccessoryLayer release];
-	[selectedIconLayer release];
-	[super dealloc];
-}
 
 
 - (void) setExpanded:(BOOL)flag{

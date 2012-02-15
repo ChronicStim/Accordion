@@ -13,13 +13,13 @@
 @interface GITreeNode ()
 
 /// redefining exposed parentPath property as retain
-@property (nonatomic, retain) NSString *parentPath;
+@property (nonatomic, strong) NSString *parentPath;
 
 /// internal property, lazy loaded
-@property (nonatomic, retain, readonly) NSDictionary *properties;
+@property (nonatomic, strong, readonly) NSDictionary *properties;
 
 ///  internal property, always reads properties from disk
-@property (nonatomic, assign, readonly) NSDictionary *nonCashedProperties;
+@property (nonatomic, unsafe_unretained, readonly) NSDictionary *nonCashedProperties;
 
 
 @end
@@ -57,7 +57,7 @@
 
 - (NSDictionary *)properties{
 	if (!_properties) {
-		_properties = [[self nonCashedProperties] retain];
+		_properties = [self nonCashedProperties];
 	}
 	return _properties;
 }
@@ -91,7 +91,6 @@
 	for (NSString *path in paths) {
 		GITreeNode *childNode = [[GITreeNode alloc] initWithName:path parent:self];
 		[_children addObject:childNode];
-		[childNode release];
 	}
 	
 }
@@ -129,17 +128,12 @@
 #pragma mark Life Cicle 
 
 - (void) dealloc{
-	[_name release];
 	_parent = nil;
-	[_parentPath release];
-	[_properties release];
-	[_children release];
-	[super dealloc];
 }
 
 - (id) initWithName:(NSString *)name parent:(GITreeNode *)aParent{
 	if ((self = [super init])){
-		_name = [name retain];
+		_name = name;
 		_parent = aParent;
 		_parentPath = nil;	
 		_properties = nil;
@@ -152,9 +146,9 @@
 
 - (id) initWithName:(NSString *)name parentPath:(NSString *)aParentPath{
 	if ((self = [super init])){
-		_name = [name retain];
+		_name = name;
 		_parent = nil;
-		_parentPath = [aParentPath retain];	
+		_parentPath = aParentPath;	
 		_properties = nil;
 		_children = nil;
 		_depth = 0;
@@ -199,11 +193,9 @@
 
 - (void) flushCache{
 	if (!self.directoryIsExpanded) {
-		[_children release];
 		_children = nil;
 	}
 	
-	[_properties release];
 	_properties = nil;
 }
 

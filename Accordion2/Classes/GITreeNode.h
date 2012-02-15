@@ -16,7 +16,7 @@
 	NSString *_name;
 	
 	NSString *_parentPath;
-	GITreeNode *_parent;
+	GITreeNode *__unsafe_unretained _parent;
 	NSMutableArray *_children;
 	
 	NSDictionary *_properties;
@@ -32,28 +32,28 @@
 - (id) initWithName:(NSString *)name parentPath:(NSString *)parentPath;
 
 /// accessor for _name
-@property (nonatomic, retain, readonly) NSString *filename;
+@property (nonatomic, strong, readonly) NSString *filename;
 
 /// lazy property. If directory then it is not nil
-@property (nonatomic, retain, readonly) NSMutableArray *children;
+@property (nonatomic, strong, readonly) NSMutableArray *children;
 
 /// accessor for _parent
-@property (nonatomic, assign, readonly) GITreeNode *parent; 
+@property (nonatomic, unsafe_unretained, readonly) GITreeNode *parent; 
 
 /// calculates the extension from _name
-@property (nonatomic, assign, readonly) NSString *fileExtension;
+@property (nonatomic, unsafe_unretained, readonly) NSString *fileExtension;
 
 /// calculates absolute by recursively accesing its parent or parentPath
-@property (nonatomic, assign, readonly) NSString *absolutePath;
+@property (nonatomic, unsafe_unretained, readonly) NSString *absolutePath;
 
 /// tells if node represents a directory
 @property (nonatomic, readonly) BOOL isDirectory;
 
 /// lazy property, accesor of creation date. cashed the date
-@property (nonatomic, assign, readonly) NSDate *creationDate;
+@property (nonatomic, unsafe_unretained, readonly) NSDate *creationDate;
 
 /// accesor of modification date, always read date from disk
-@property (nonatomic, assign, readwrite) NSDate *modificationDate;
+@property (nonatomic, unsafe_unretained, readwrite) NSDate *modificationDate;
 
 /// lazy property. depth of node
 @property (nonatomic, readonly) NSInteger depth;
