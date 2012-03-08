@@ -224,6 +224,9 @@ NSString *space(int x){
         if ([extension isEqualToString:@"html"]) {
             iconImage = [UIImage imageNamed:@"file_extension_html"];
         }
+        else if ([extension isEqualToString:@"pdf"]) {
+            iconImage = [UIImage imageNamed:@"file_extension_pdf"];
+        }
         else if ([extension isEqualToString:@"csv"]) {
             iconImage = [UIImage imageNamed:@"file_extension_csv"];
         }
@@ -252,6 +255,9 @@ NSString *space(int x){
         NSString *extension = [self fileExtension];
         if ([extension isEqualToString:@"html"]) {
             mimeTypeCode = [NSString stringWithString:@"text/html"];
+        }
+        else if ([extension isEqualToString:@"pdf"]) {
+            mimeTypeCode = [NSString stringWithString:@"application/pdf"];
         }
         else if ([extension isEqualToString:@"csv"]) {
             mimeTypeCode = [NSString stringWithString:@"text/csv"];
