@@ -11,6 +11,7 @@
 #import "GIAccordion.h"
 #import "GIAccordionViewCell.h"
 #import "GITreeNode.h"
+#import "NSDate-Utilities.h"
 
 @interface GIAccordion ()
 {
@@ -59,7 +60,7 @@
     [cell setTitle:node.filename];
 	[cell setIcon:[node iconForTreeNode] 
 	  isDirectory:node.isDirectory];
-	cell.detailTextLabel.text = [[node modificationDate] description];//creationDateFormated];
+	cell.detailTextLabel.text = [[node modificationDate] localDateTimeStringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];//creationDateFormated];
 	cell.indentationLevel = node.depth;
 
 	return cell;
