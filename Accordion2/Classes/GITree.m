@@ -242,44 +242,43 @@
 
 }
 
-/*
-- (NSRange) deleteNodeAtIndex:(NSUInteger) index{
-	
-}
 
-- (void)tableView:(UITableView *)aTableView 
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
-forRowAtIndexPath:(NSIndexPath *)indexPath {
+//- (NSRange) deleteNodeAtIndex:(NSUInteger) index{
+//	
+//}
+
+//- (void)tableView:(UITableView *)aTableView 
+//commitEditingStyle:(UITableViewCellEditingStyle)editingStyle 
+//forRowAtIndexPath:(NSIndexPath *)indexPath {
+//	
+//	if (editingStyle == UITableViewCellEditingStyleDelete) {
+//		
+//		GITreeNode *node = [self.nodes objectAtIndex:indexPath.row];
+//		NSRange collapsedRange = [self collapseNodeAtIndex:indexPath.row];
+//
+//		NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
+//		for (int i = 0; i<collapsedRange.length; i++) {
+//			[indexPaths addObject:[NSIndexPath indexPathForRow:collapsedRange.location+i inSection:0]];
+//		}
+//		[aTableView deleteRowsAtIndexPaths:indexPaths 
+//						  withRowAnimation:UITableViewRowAnimationLeft];
+//		
+//		GIFile * file = [datasourceManager.mergedRootBranch objectAtIndex:indexPath.row];
+//		[detailViewController removeFile:file];
+//		
+//		[datasourceManager deleteFileAtIndex:indexPath.row];
+//		[aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+//		
+//	}   
+//	else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//		
+//		[datasourceManager createFileAtIndex:indexPath.row withName:[NSString stringWithFormat:@"%@", [NSDate date]]];
+//		[aTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//		
+//	}   
+//}
 	
-	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		
-		GITreeNode *node = [self.nodes objectAtIndex:indexPath.row];
-		NSRange collapsedRange = [self collapseNodeAtIndex:indexPath.row];
-		[self
-		NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
-		for (int i = 0; i<collapsedRange.length; i++) {
-			[indexPaths addObject:[NSIndexPath indexPathForRow:collapsedRange.location+i inSection:0]];
-		}
-		[aTableView deleteRowsAtIndexPaths:indexPaths 
-						  withRowAnimation:UITableViewRowAnimationLeft];
-		[indexPaths release];
-		
-		GIFile * file = [datasourceManager.mergedRootBranch objectAtIndex:indexPath.row];
-		[detailViewController removeFile:file];
-		
-		[datasourceManager deleteFileAtIndex:indexPath.row];
-		[aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-		
-	}   
-	else if (editingStyle == UITableViewCellEditingStyleInsert) {
-		
-		[datasourceManager createFileAtIndex:indexPath.row withName:[NSString stringWithFormat:@"%@", [NSDate date]]];
-		[aTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
-		
-	}   
-}
-	
- */
+
 
 
 @end

@@ -112,7 +112,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{
 	
-	NSLog(@"%@", self);
+	//NSLog(@"%@", self);
 	
 	if(inPseudoEditMode){
 		self.selectedIconLayer.contents = (id)[UIImage imageNamed:selected?@"selected.png":@"unselected.png"].CGImage;

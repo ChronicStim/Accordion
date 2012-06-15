@@ -60,7 +60,8 @@
     [cell setTitle:node.filename];
 	[cell setIcon:[node iconForTreeNode] 
 	  isDirectory:node.isDirectory];
-	cell.detailTextLabel.text = [[node modificationDate] localDateTimeStringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];//creationDateFormated];
+    NSString *detailString = [NSString stringWithFormat:@"%@  %@   %@",[[node modificationDate] dateDiffFromOriginalDate],[[node modificationDate] localDateTimeStringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle],[node formattedFileSize:[node fileSize]]];
+	cell.detailTextLabel.text = detailString;
 	cell.indentationLevel = node.depth;
 
 	return cell;
