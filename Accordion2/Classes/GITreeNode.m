@@ -275,29 +275,29 @@ NSString *space(int x){
 {
     NSString *mimeTypeCode;
     if ([self isDirectory]) {
-        mimeTypeCode = [NSString stringWithString:@""];
+        mimeTypeCode = @"";
     } else {
         NSString *extension = [self fileExtension];
         if ([extension isEqualToString:@"html"]) {
-            mimeTypeCode = [NSString stringWithString:@"text/html"];
+            mimeTypeCode = @"text/html";
         }
         else if ([extension isEqualToString:@"pdf"]) {
-            mimeTypeCode = [NSString stringWithString:@"application/pdf"];
+            mimeTypeCode = @"application/pdf";
         }
         else if ([extension isEqualToString:@"csv"]) {
-            mimeTypeCode = [NSString stringWithString:@"text/csv"];
+            mimeTypeCode = @"text/csv";
         }
         else if ([extension isEqualToString:@"png"]) {
-            mimeTypeCode = [NSString stringWithString:@"image/png"];
+            mimeTypeCode = @"image/png";
         }
         else if ([extension isEqualToString:@"sqlite"]) {
-            mimeTypeCode = [NSString stringWithString:@"application/sqlite"];
+            mimeTypeCode = @"application/sqlite";
         }        
         else if ([extension isEqualToString:@"zip"]) {
-            mimeTypeCode = [NSString stringWithString:@"application/zip"];
+            mimeTypeCode = @"application/zip";
         }
         else {
-            mimeTypeCode = [NSString stringWithString:@""];
+            mimeTypeCode = @"";
         }
     }
     return mimeTypeCode;
