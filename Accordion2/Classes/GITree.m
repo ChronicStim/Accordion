@@ -121,6 +121,24 @@
 	
 }
 
+-(void)deleteNodeAtIndex:(NSUInteger)index;
+{
+    if (index <= [_sortedNodes count]) {
+        GITreeNode *node = (GITreeNode *)[_sortedNodes objectAtIndex:index];
+        GITreeNode *parent = (GITreeNode *)[node parent];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if ([fileManager fileExistsAtPath:[node absolutePath]]) {
+            NSError *error = nil;
+            if (![fileManager removeItemAtPath:[node absolutePath] error:&error]) {
+                DDLogError(@"Error removing report at index: %i ; error = %@",index,[error userInfo]);
+            }
+        }
+        [_sortedNodes removeObjectAtIndex:index];
+        if (nil != parent) {
+            [parent reloadChildren];
+        }
+    }
+}
 
 #pragma mark -
 #pragma mark UITableViewDelegate

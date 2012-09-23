@@ -89,5 +89,6 @@
 -(NSString *)mimeTypeForTreeNode;
 -(NSInteger)fileSize;
 - (NSString *)formattedFileSize:(unsigned long long)size;
+-(void)reloadChildren;
 
 @end

@@ -94,7 +94,7 @@
 	}
 }
 
-
+/*
 // override: default implemention shows the +/- in the cells
 - (void) setEditing:(BOOL)editing{
 	[self setPseudoEditingMode:editing animated:NO];
@@ -102,7 +102,7 @@
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated{
 	[self setPseudoEditingMode:editing animated:animated];
 }
-
+*/
 
 
 

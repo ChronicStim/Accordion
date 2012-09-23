@@ -102,6 +102,11 @@
 	return _children;
 }
 
+-(void)reloadChildren;
+{
+    _children = nil;
+}
+
 @synthesize parent = _parent;
 @synthesize parentPath = _parentPath;
 

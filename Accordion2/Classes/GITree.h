@@ -30,5 +30,6 @@
 - (NSRange) expandNodeAtIndex:(NSUInteger)index;
 - (NSRange) collapseNodeAtIndex:(NSUInteger)index;
 
+-(void)deleteNodeAtIndex:(NSUInteger)index;
 
 @end
