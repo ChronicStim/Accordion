@@ -137,9 +137,9 @@
 	[super layoutSubviews];
 	
 	float indentation = self.indentationWidth*(self.indentationLevel-1); //+ editIndentation
-	float editIndentation = (isShowingEditControl)?30:0; //self.editing is aimai
+	float editIndentation = 0;//(isShowingEditControl)?30:0; //self.editing is aimai
 	float pseudoEditIndentation = inPseudoEditMode?23:0;
-	indentation += pseudoEditIndentation;
+//	indentation += pseudoEditIndentation;
 	float cellHeight = self.frame.size.height;
 	static int iconSize = 32;  
 	
@@ -154,14 +154,14 @@
 	}
 	
 	// 11 is (cellHeight-44)/2
-	[dirAccessoryLayer setFrame:CGRectMake(indentation + editIndentation, 11, iconSize, iconSize)];
+	[dirAccessoryLayer setFrame:CGRectIntegral(CGRectMake(indentation + editIndentation, 11, iconSize, iconSize))];
 	
-	[self.imageView setFrame:CGRectMake(indentation + iconSize, 11, iconSize, iconSize)];
+	[self.imageView setFrame:CGRectIntegral(CGRectMake(indentation, 11, iconSize, iconSize))];
 	
-	[self.textLabel setFrame:CGRectMake(indentation + 2*iconSize + 5, cellHeight*0.1, 
-										self.frame.size.width - 2*iconSize - indentation - 5, cellHeight*0.5)];
-	[self.detailTextLabel setFrame:CGRectMake(indentation + 2*iconSize + 5, cellHeight*0.6,  
-											  self.frame.size.width - 2*iconSize - indentation - 5, cellHeight*0.3)];
+	[self.textLabel setFrame:CGRectIntegral(CGRectMake(indentation + iconSize + 5, cellHeight*0.1, 
+										self.frame.size.width - iconSize - indentation - 5, cellHeight*0.5))];
+	[self.detailTextLabel setFrame:CGRectIntegral(CGRectMake(indentation + iconSize + 5, cellHeight*0.6,  
+											  self.frame.size.width - iconSize - indentation - 5, cellHeight*0.3))];
 	
 }
 
