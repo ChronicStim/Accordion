@@ -138,7 +138,7 @@
 	
 	float indentation = self.indentationWidth*(self.indentationLevel-1); //+ editIndentation
 	float editIndentation = 0;//(isShowingEditControl)?30:0; //self.editing is aimai
-	float pseudoEditIndentation = inPseudoEditMode?23:0;
+//	float pseudoEditIndentation = inPseudoEditMode?23:0;
 //	indentation += pseudoEditIndentation;
 	float cellHeight = self.frame.size.height;
 	static int iconSize = 32;  
