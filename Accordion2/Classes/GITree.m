@@ -130,7 +130,7 @@
         if ([fileManager fileExistsAtPath:[node absolutePath]]) {
             NSError *error = nil;
             if (![fileManager removeItemAtPath:[node absolutePath] error:&error]) {
-                DDLogError(@"Error removing report at index: %i ; error = %@",index,[error userInfo]);
+                DDLogError(@"Error removing report at index: %lu ; error = %@",index,[error userInfo]);
             }
         }
         [_sortedNodes removeObjectAtIndex:index];
@@ -177,8 +177,8 @@
 	//below is what it has to be passed to a cell but UITableViewCell is too basic.
 	GITreeNode *node = (GITreeNode *)[self.nodes objectAtIndex:indexPath.row];	
 	cell.indentationLevel = node.depth;
-	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %d", node.isDirectory?@"D":@"F",
-						   node.filename, indexPath.row];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %ld", node.isDirectory?@"D":@"F",
+						   node.filename, (long)indexPath.row];
 	return cell;
 }
 
