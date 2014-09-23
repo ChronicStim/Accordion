@@ -214,7 +214,7 @@ NSString *space(int x){
 
 - (NSString *) description{
 	
-	return [NSString stringWithFormat:@"%@%@ %@", space(self.depth),self.isDirectory?@"D":@"F", self.filename];
+	return [NSString stringWithFormat:@"%@%@ %@", space((int)self.depth),self.isDirectory?@"D":@"F", self.filename];
 }
 
 -(NSInteger)fileSize;

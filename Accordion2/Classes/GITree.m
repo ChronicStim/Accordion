@@ -58,7 +58,7 @@
 	int res = 0;
 	if (node.directoryIsExpanded) {
 		NSArray *children = node.children;
-		res = children.count;
+		res = (int)children.count;
 		for (GITreeNode *child in children) {
 			res += [self _collapseNode:child];
 		}
