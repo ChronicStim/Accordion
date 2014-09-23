@@ -130,7 +130,7 @@
         if ([fileManager fileExistsAtPath:[node absolutePath]]) {
             NSError *error = nil;
             if (![fileManager removeItemAtPath:[node absolutePath] error:&error]) {
-                DDLogError(@"Error removing report at index: %lu ; error = %@",index,[error userInfo]);
+                DDLogError(@"Error removing report at index: %lu ; error = %@",(unsigned long)index,[error userInfo]);
             }
         }
         [_sortedNodes removeObjectAtIndex:index];
