@@ -29,7 +29,7 @@
 	}
 	accordion = [[CPTGIAccordion alloc] initWithPath:path];
 
-	self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+	self.preferredContentSize = CGSizeMake(320.0, 600.0);
 	self.title = @"Accordion2";
 }
 
