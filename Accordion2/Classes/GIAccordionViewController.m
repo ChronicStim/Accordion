@@ -62,7 +62,7 @@
 	//not implemented yet
 	//self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-//	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleBordered target:self action:@selector(sort:)];
+//	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sort:)];
 //	NSArray *items = [[NSArray alloc] initWithObjects:sortButton, nil];
 //	self.navigationController.toolbarItems = items;
 //	[items release];
