@@ -77,7 +77,11 @@
 - (void) setIcon:(UIImage *)icon isDirectory:(BOOL)isDir{
 	isDirectory = isDir;
 	self.imageView.image = icon;
-	self.dirAccessoryLayer.contents = (id)[UIImage imageNamed:(isDirectory)?@"triangleSmall.png":nil].CGImage;	
+    if (isDirectory) {
+        self.dirAccessoryLayer.contents = (id)[UIImage imageNamed:@"triangleSmall.png"].CGImage;
+    } else {
+        self.dirAccessoryLayer.contents = nil;
+    }
 }
 
 - (void) setPseudoEditingMode:(BOOL)pseudoEditing animated:(BOOL)animated{
