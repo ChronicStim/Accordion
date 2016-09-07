@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Accordion"
-  s.version      = "1.4.0"
+  s.version      = "1.4.2"
   s.summary      = "A small library for iOS that implements file navigation using accordions."
 
   # This description is used to generate tags and improve search results.
@@ -89,10 +89,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Accordion/Accordion2/Classes/Source/**/*.h"
-  # s.exclude_files = "Classes/Exclude"
+  s.source_files  = "Accordion2/Source/Classes/*.{h,m}"
+  s.exclude_files = "Accordion1/**/*"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "Accordion2/Source/Classes/GIAccordion.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -104,7 +104,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "Accordion2/Source/Images/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
