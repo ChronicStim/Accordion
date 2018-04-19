@@ -72,25 +72,12 @@
 	self.tableView.dataSource = accordion;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
-}
-
-
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
 	[super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc. that aren't in use.
 }
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
-
-
 
 - (IBAction)sort:(id)sender{
 	NSLog(@"%@ : Not Implemented", NSStringFromSelector(_cmd));
